@@ -63,6 +63,7 @@ public class ClassLoaderActuator {
                             srcesPath.lastIndexOf("src" + File.separator + "main" + File.separator + "java")
                                     + ("src" + File.separator + "main" + File.separator + "java").length() + 1,
                             srcesPath.length());
+
                     // 构建出class文件的位置
                     // new File((classPath + "\\" + classesPath).replace(".java", ".class"));
                     try {
@@ -121,14 +122,5 @@ public class ClassLoaderActuator {
      */
     private List<File> initClassFiles(String classPath) {
         return this.fileListActuator.listFile(classPath);
-    }
-
-    public static void main(String[] args) {
-        ClassLoaderActuator actuator = new ClassLoaderActuator();
-        // 参数一:class文件存储位置,精确到目录classes
-        // 参数二:java源文件目录 绝对路径+src/man/java
-        // 参数三:扫描的包名称
-        actuator.startHotDeployment("D:\\VsCode\\vscode workspace\\deployment-plus\\target\\classes",
-                "D:\\VsCode\\vscode workspace\\deployment-plus\\src\\main\\java", "com.deployment");
     }
 }
