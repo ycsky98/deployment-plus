@@ -34,9 +34,8 @@ public class ClassLoaderActuator {
      * 
      * @param classPath 字节码编译路径(到classes就行)
      * @param src       原文件路径 (src/main/java)
-     * @param pkg
      */
-    public void startHotDeployment(String classPath, String srcPath, String pkg) {
+    public void startHotDeployment(String classPath, String srcPath) {
         // 加载class文件
         List<File> files = this.initClassFiles(classPath);
         files.stream().forEach(file -> {
